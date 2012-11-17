@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <div tal:condition="request.session.peek_flash()">
+            <p>
+                ${request.session.pop_flash()}
+            </p>
+        </div>
+        <form action="${request.url}" method="post">
+            ${structure:fs.render()}
+            <ul>
+                <li tal:repeat="button buttons">
+                    <input type="submit" name="${button}" value="${button}">
+                </li>
+            </ul>
+        </form>
+    </body>
+</html>
