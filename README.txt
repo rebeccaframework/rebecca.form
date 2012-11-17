@@ -53,8 +53,7 @@ For example, create finder for ::
 
     item_finder = MatchDictFinder(Item, DBSession, [(Item.id, 'item_id')])
 
-item_finder executes like this
-
-::
+item_finder executes like this ::
 
     DBSession.query(Item).filter(Item.id==request.matchdict['item_id']).one()
+

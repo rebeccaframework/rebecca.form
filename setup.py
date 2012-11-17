@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.0'
+version = '0.1'
 
 long_description = (
     open('README.txt').read()
@@ -28,12 +28,16 @@ setup(name='rebecca.form',
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Framework :: Pyramid",
+        "Topic :: Internet :: WWW/HTTP :: WSGI",
+        "Topic :: Software Development :: Libraries :: Python Modules",
         "Programming Language :: Python",
         ],
       keywords='',
       author='Atsushi Odagiri',
       author_email='aodagx@gmail.com',
-      url='http://svn.plone.org/svn/collective/',
+      url='https://github.com/rebeccaframework/rebecca.form',
       license='MIT',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
