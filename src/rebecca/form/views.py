@@ -1,10 +1,6 @@
 
 import formalchemy as fa
 from . import helpers as h
-from pyramid.url import current_route_url
-
-def page_url(page):
-    return current_route_url(request, page=page, _query=request.GET)
 
 class FormView(object):
 
@@ -96,37 +92,3 @@ class DisplayView(FormView):
 
     def can_validating(self):
         return False
-
-class GridView(object):
-    Grid = fa.Grid
-    __x_model = None
-    __x_query_factory = None
-
-    def __init__(self, context, request):
-        self.context = context
-        self.request = request
-
-    def __call__(self):
-        items = self.get_items()
-        grid = self.create_grid(items)
-        self.before(grid)
-
-        return self.template_variables(grid=grid)
-
-    def get_items(self):
-        return []
-
-    def template_variables(self, **kwargs):
-        return kwargs
-
-
-    def before(self, grid):
-        pass
-
-    def create_grid(self):
-        return self.Grid(self.__x_model__)
-
-class PagenateGridView(GridView):
-    def get_items(self):
-        self.page = paginate.Page()
-        return self.page.items
