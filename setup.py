@@ -23,7 +23,7 @@ tests_require = [
 
 setup(name='rebecca.form',
       version=version,
-      description="",
+      description="pyramid view components based on formalchemy",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -31,10 +31,10 @@ setup(name='rebecca.form',
         "Programming Language :: Python",
         ],
       keywords='',
-      author='',
-      author_email='',
+      author='Atsushi Odagiri',
+      author_email='aodagx@gmail.com',
       url='http://svn.plone.org/svn/collective/',
-      license='gpl',
+      license='MIT',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
       namespace_packages=['rebecca'],
